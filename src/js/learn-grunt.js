@@ -1,9 +1,9 @@
 $(function(){
     alert("hello"); 
     meme();
-    
+
 });
 
 function meme(){
-    console.log("this me");
+    console.log("this is me");
 }

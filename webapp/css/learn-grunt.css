@@ -1,4 +1,30 @@
 body {
-  background: red; }
+  background: red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  body:-webkit-full-screen {
+    content: ""; }
+  body:-ms-fullscreen {
+    content: ""; }
+  body:fullscreen {
+    content: ""; }
 
-/*# sourceMappingURL=learn-grunt.css.map */
+@-webkit-keyframes animationExample {
+  from {
+    width: 0; }
+  to {
+    width: 100%; } }
+
+@keyframes animationExample {
+  from {
+    width: 0; }
+  to {
+    width: 100%; } }
+
+.animateThis {
+  -webkit-animation: animationExample 2s;
+          animation: animationExample 2s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
