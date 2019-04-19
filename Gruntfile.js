@@ -5,44 +5,44 @@ module.exports = function (grunt) {
 
     grunt.initConfig({
         // reads the json file and assign to to variable
-        // the package does have, name of the project, path where to store js & css
+        // the package.json does have, name of the project, path where to store js & css
         // pkg.name : project name
-        // pkg.projectPath.cssLocation : path for css files
-        // pkg.projectPath.JSLocation : path for js files
+        // pkg.project.path.cssLocation : path for css files
+        // pkg.project.path.JSLocation : path for js files
         pkg: grunt.file.readJSON("package.json"),
         sass: { // compile scss files to css using grunt-sass
             options: {
-                // grunt sass has to implementation to compile scss - Dart Sass or Node Sass.
+                // grunt sass has two implementation to compile scss - Dart Sass or Node Sass.
                 // the const value of implSass defined on the top is used here
                 implementation: sassImpl,
-                sourceMap: "inline",
+                sourceMap: true,
                 style: 'expanded'
             },
             dist: {
                 files: {
                     // destination file: soruce file
-                    "<%= pkg.projectPath.cssLocation %>/<%= pkg.name%>.css": "src/scss/<%= pkg.name %>.scss"
+                    "<%= pkg.project.path.cssLocation %>/<%= pkg.name%>.css": "src/scss/<%= pkg.name %>.scss"
                 }
             }
         },
         postcss: {// browser prefixes
-            dev: {
+            development: {// task for postcss for development env
                 options: {
                     processors: [
                         require('autoprefixer')({ browsers: 'last 2 versions' }), // add vendor prefixes last 2 for each browser
                     ]
                 },
-                src: "<%= pkg.projectPath.cssLocation %>/<%= pkg.name%>.css",
-                dest: "<%= pkg.projectPath.cssLocation %>/<%= pkg.name%>.css",
+                src: "<%= pkg.project.path.cssLocation %>/<%= pkg.name%>.css",
+                dest: "<%= pkg.project.path.cssLocation %>/<%= pkg.name%>.css",
             },
-            build:{
+            production:{ // task for postcss for production env
                 options: {
                     processors: [
                         require('cssnano')() // minify the result
                     ]
                 },
-                src: "<%= pkg.projectPath.cssLocation %>/<%= pkg.name%>.css",
-                dest: "<%= pkg.projectPath.cssLocation %>/<%= pkg.name%>.min.css",
+                src: "<%= pkg.project.path.cssLocation %>/<%= pkg.name%>.css",
+                dest: "<%= pkg.project.path.cssLocation %>/<%= pkg.name%>.min.css",
             }
         },
         uglify: { // minify js file

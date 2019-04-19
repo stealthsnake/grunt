@@ -21,9 +21,12 @@
     "node-sass": "^4.11.0",
     "pixrem": "^5.0.0"
   },
-  "projectPath": {
-    "cssLocation": "webapp/css",
-    "JSLocation": "webapp/js"
+  "project":{
+    "path": {
+      "cssLocation": "webapp/css",
+      "JSLocation": "webapp/js"
+    }
   },
+  
   "dependencies": {}
 }

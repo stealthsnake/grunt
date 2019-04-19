@@ -10,6 +10,9 @@ body {
   body:fullscreen {
     content: ""; }
 
+body {
+  background: red; }
+
 @-webkit-keyframes animationExample {
   from {
     width: 0; }
