@@ -1,25 +1,3 @@
-body{
-    background: red;
-    display: flex;
-    &:fullscreen {
-        content: "";
-    }
-}
-
-body{
-    background:  red;
-}
-
-@keyframes animationExample {
-    from {
-        width: 0;
-    }
-    to {
-        width: 100%;
-    }
-}
- 
-.animateThis {
-    animation: animationExample 2s;
-    display: flex;
-}
+@import"functions/colorFunctions";
+@import"mixin/defaultMixin";
+@import"variable";

@@ -1,0 +1,31 @@
+
+@mixin makeButton($bgcolor:white,$transparent:1,$border:0px, $radius:$smallRadius){
+    text-decoration: none;
+	background: rgba($bgcolor, $transparent);
+	border-radius: $radius;
+	border:$border solid darken($color:$bgcolor, $amount: 20) ;
+    padding:$defaultSpacing;
+    color: setTextColor($bgcolor);    
+    &:hover{
+        background: setColor($bgcolor);
+    }
+}
+
+@function setColor($color,$transparent:1){
+
+    @if(lightness($color) >= 50){
+       @return rgba(lighten($color,10), $transparent);
+    }@else{
+        @return rgba(darken($color,10), $transparent);
+    }
+}
+
+
+@function setTextColor($color){
+
+    @if(lightness($color) > 50){
+        @return #000;
+    }@else{
+        @return #fff;
+    }
+}

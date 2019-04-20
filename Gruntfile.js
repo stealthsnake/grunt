@@ -51,7 +51,7 @@ module.exports = function (grunt) {
             },
             build: {
                 src: "src/js/<%= pkg.name %>.js",
-                dest: "<%= pkg.projectPath.JSLocation %>/<%= pkg.name %>.min.js"
+                dest: "<%= pkg.project.path.JSLocation %>/<%= pkg.name %>.min.js"
             }
         },
         watch: {
